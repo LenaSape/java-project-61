@@ -24,3 +24,7 @@ application {
     // Входная точка
     mainClass.set("hexlet.code.App")
 }
+
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}
