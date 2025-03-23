@@ -36,5 +36,6 @@ sonar {
     property("sonar.projectKey", "LenaSape_java-project-61")
     property("sonar.organization", "lenasape")
     property("sonar.host.url", "https://sonarcloud.io")
+    property("sonar.working.directory", "/app")
   }
 }
