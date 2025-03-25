@@ -4,8 +4,12 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Even {
-    public static void sayEven(){
-        String userName = App.sayHelloUser();
+    public static void sayEven() {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner myObj = new Scanner(System.in);
+        String userName = myObj.nextLine();
+        System.out.println("Hello, " + userName + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random rand = new Random();
         int randomInt;
@@ -14,9 +18,10 @@ public class Even {
             randomInt = rand.nextInt(100);
             System.out.println("Question: " + randomInt);
             System.out.print("Your answer: ");
-            Scanner myObj = new Scanner(System.in);
-            String userAnswer = myObj.nextLine();
-            if((userAnswer.equals("yes") && (randomInt % 2 == 0)) || (userAnswer.equals("no") && (randomInt % 2 != 0))) {
+            Scanner scanNumbers = new Scanner(System.in);
+            String userAnswer = scanNumbers.nextLine();
+            if((userAnswer.equals("yes") && (randomInt % 2 == 0)) ||
+                    (userAnswer.equals("no") && (randomInt % 2 != 0))) {
                 System.out.println("Correct!");
             } else {
                 String correctAnswer = (randomInt % 2 == 0) ? "yes" : "no";

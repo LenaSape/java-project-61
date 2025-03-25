@@ -12,25 +12,26 @@ public class App {
         Scanner userScanner = new Scanner(System.in);
         String userChoice = userScanner.nextLine();
         int choice = Integer.parseInt(userChoice);
-        switch(choice) {
+        switch (choice) {
             case 0:
                 return;
             case 1:
-                String userName = sayHelloUser();
+                sayHelloUser();
                 break;
             case 2:
                 Even.sayEven();
                 break;
+            default:
+                //return;
         }
 
     }
 
-    public static String sayHelloUser() {
+    public static void sayHelloUser() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner myObj = new Scanner(System.in);
         String userName = myObj.nextLine();
         System.out.println("Hello, " + userName + "!");
-        return userName;
     }
 }
