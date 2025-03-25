@@ -20,18 +20,19 @@ public class Even {
             System.out.print("Your answer: ");
             Scanner scanNumbers = new Scanner(System.in);
             String userAnswer = scanNumbers.nextLine();
-            if((userAnswer.equals("yes") && (randomInt % 2 == 0)) ||
-                    (userAnswer.equals("no") && (randomInt % 2 != 0))) {
+            if ((userAnswer.equals("yes") && (randomInt % 2 == 0))
+                    || (userAnswer.equals("no") && (randomInt % 2 != 0))) {
                 System.out.println("Correct!");
             } else {
                 String correctAnswer = (randomInt % 2 == 0) ? "yes" : "no";
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" +
+                                    correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 wasSuccess = false;
                 break;
             }
         }
-        if(wasSuccess) {
+        if (wasSuccess) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
