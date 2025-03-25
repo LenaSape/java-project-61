@@ -25,8 +25,8 @@ public class Even {
                 System.out.println("Correct!");
             } else {
                 String correctAnswer = (randomInt % 2 == 0) ? "yes" : "no";
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" +
-                                    correctAnswer + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 wasSuccess = false;
                 break;
