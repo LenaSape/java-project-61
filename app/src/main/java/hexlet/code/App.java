@@ -6,16 +6,31 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
+        System.out.println("2 - Even");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         Scanner userScanner = new Scanner(System.in);
         String userChoice = userScanner.nextLine();
-        //System.out.println(userChoice);
-        if (!userChoice.equals("1")) {
-            return;
+        int choice = Integer.parseInt(userChoice);
+        switch(choice) {
+            case 0:
+                return;
+            case 1:
+                String userName = sayHelloUser();
+                break;
+            case 2:
+                Even.sayEven();
+                break;
         }
-        System.out.println("");
+
+    }
+
+    public static String sayHelloUser() {
         System.out.println("Welcome to the Brain Games!");
-        Cli.sayHello();
+        System.out.print("May I have your name? ");
+        Scanner myObj = new Scanner(System.in);
+        String userName = myObj.nextLine();
+        System.out.println("Hello, " + userName + "!");
+        return userName;
     }
 }
