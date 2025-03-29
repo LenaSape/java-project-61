@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Calc {
     public static void beginCalc() {
-        System.out.println("Calc");
+        //System.out.println("Calc");
         String userName = Engine.sayHello("What is the result of the expression?");
 
         boolean wasSuccess = true;
