@@ -11,17 +11,13 @@ public class Calc {
         boolean wasSuccess = true;
         boolean result;
         Random rand = new Random();
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             int int1 = rand.nextInt(100);
             int int2 = rand.nextInt(100);
             int intSign = rand.nextInt(3);
-            int intResult = 0;
-            char charSign = '+';
+            int intResult;
+            char charSign;
             switch (intSign) {
-                case 0:
-                    intResult = int1 + int2;
-                    charSign = '+';
-                    break;
                 case 1:
                     intResult = int1 - int2;
                     charSign = '-';
@@ -30,6 +26,9 @@ public class Calc {
                     intResult = int1 * int2;
                     charSign = '*';
                     break;
+                default:
+                    intResult = int1 + int2;
+                    charSign = '+';
             }
             String questionStr = int1 + " " + charSign + " " + int2;
             //System.out.println(intResult);
