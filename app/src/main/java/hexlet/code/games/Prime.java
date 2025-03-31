@@ -11,7 +11,7 @@ public class Prime {
         }
         for (int i = 2; i < a; i++) {
             if ((a % i) == 0) {
-               return "no";
+                return "no";
             }
         }
         return "yes";
