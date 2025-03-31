@@ -13,7 +13,7 @@ public class Progression {
         boolean result;
         Random rand = new Random();
         for (int i = 0; i < 3; i++) {
-            int number0 = rand.nextInt(8) + 1 ;
+            int number0 = rand.nextInt(8) + 1;
             int pos = rand.nextInt(8) + 1;
             int delta = rand.nextInt(5) + 1;
             String rightAnswer = "";
