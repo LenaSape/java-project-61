@@ -10,3 +10,4 @@
 [Video Calc](https://asciinema.org/connect/640d674f-698d-4571-bbfd-e7fc3a9cea7c)
 
 [Video GCD](https://asciinema.org/a/BxKfh4G5WX7kRuEgaOZGsdwxt)
+[Video Progression](https://asciinema.org/a/14KIeGgHbAoMMpoxFh54zdTJA)
