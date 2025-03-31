@@ -12,3 +12,5 @@
 [Video GCD](https://asciinema.org/a/BxKfh4G5WX7kRuEgaOZGsdwxt)
 
 [Video Progression](https://asciinema.org/a/14KIeGgHbAoMMpoxFh54zdTJA)
+
+[Video Prime](https://asciinema.org/a/o3I44uhRAmmbZbgE0DPpQy5s7)
