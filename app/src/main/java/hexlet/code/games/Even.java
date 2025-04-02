@@ -10,7 +10,7 @@ public class Even {
         String[] questions = new String[rounds];
         String[] rightAnswers = new String[rounds];
         Random rand = new Random();
-        var boundGame = 100;
+        final int boundGame = 100;
         for (int i = 0; i < rounds; i++) {
             int x = rand.nextInt(boundGame);
             questions[i] = "Question: " + x;

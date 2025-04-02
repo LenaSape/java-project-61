@@ -21,7 +21,7 @@ public class App {
         Scanner userScanner = new Scanner(System.in);
         String userChoice = userScanner.nextLine();
         int choice = Integer.parseInt(userChoice);
-        var rounds = 3;
+        final int rounds = 3;
         switch (choice) {
             case 1:
                 Cli.sayHello();

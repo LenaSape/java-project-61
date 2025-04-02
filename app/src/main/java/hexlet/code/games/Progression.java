@@ -10,8 +10,8 @@ public class Progression {
         String[] questions = new String[rounds];
         String[] rightAnswers = new String[rounds];
         Random rand = new Random();
-        var boundDelta = 5;
-        var boundNumberOfEl = 8;
+        final int boundDelta = 5;
+        final int boundNumberOfEl = 8;
         for (int i = 0; i < rounds; i++) {
             int number0 = rand.nextInt(boundNumberOfEl) + 1;
             int pos = rand.nextInt(boundNumberOfEl) + 1;
