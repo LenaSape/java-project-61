@@ -5,14 +5,12 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Progression {
-
-    public static void beginProgression() {
-        String userName = Engine.sayHello("What number is missing in the progression?");
-
-        boolean wasSuccess = true;
-        boolean result;
+    public static void playProgression(int rounds) {
+        String userName = Engine.sayGameRules("What number is missing in the progression?");
+        String[] questions = new String[rounds];
+        String[] rightAnswers = new String[rounds];
         Random rand = new Random();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < rounds; i++) {
             int number0 = rand.nextInt(8) + 1;
             int pos = rand.nextInt(8) + 1;
             int delta = rand.nextInt(5) + 1;
@@ -30,15 +28,10 @@ public class Progression {
                 }
                 //elements.append(Integer.toString(number0 + delta * j));
             }
-            String questionStr = elements.toString();
-           //String rightAnswer = Integer.toString(12);
-            result = Engine.askQuestion(questionStr, rightAnswer, userName);
-            if (!result) {
-                wasSuccess = false;
-                break;
-            }
-
+            questions[i] = elements.toString();
+            rightAnswers[i] = rightAnswer;
         }
-        Engine.finishGame(wasSuccess, userName);
+        Engine.startGame(questions, rightAnswers, userName);
     }
 }
+

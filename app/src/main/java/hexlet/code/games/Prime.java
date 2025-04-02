@@ -17,22 +17,17 @@ public class Prime {
         return "yes";
     }
 
-    public static void beginPrime() {
-        String userName = Engine.sayHello("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        boolean wasSuccess = true;
-        boolean result;
+    public static void playPrime(int rounds) {
+        String userName = Engine.sayGameRules("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String[] questions = new String[rounds];
+        String[] rightAnswers = new String[rounds];
         Random rand = new Random();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < rounds; i++) {
             int number = rand.nextInt(50);
-            String questionStr = "Question: " + number;
-            String rightAnswer = definePrime(number);
-            result = Engine.askQuestion(questionStr, rightAnswer, userName);
-            if (!result) {
-                wasSuccess = false;
-                break;
-            }
+            questions[i] = "Question: " + number;
+            rightAnswers[i] = definePrime(number);
         }
-        Engine.finishGame(wasSuccess, userName);
+        Engine.startGame(questions, rightAnswers, userName);
     }
 }

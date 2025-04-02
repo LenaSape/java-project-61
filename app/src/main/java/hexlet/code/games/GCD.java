@@ -13,24 +13,19 @@ public class GCD {
         return a;
     }
 
-    public static void beginGCD() {
-        String userName = Engine.sayHello("Find the greatest common divisor of given numbers.");
-
-        boolean wasSuccess = true;
-        boolean result;
+    public static void playGCD(int rounds) {
+        String userName = Engine.sayGameRules("Find the greatest common divisor of given numbers.");
+        String[] questions = new String[rounds];
+        String[] rightAnswers = new String[rounds];
         Random rand = new Random();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < rounds; i++) {
             int int1 = rand.nextInt(100);
             int int2 = rand.nextInt(100);
-            String questionStr = "Question: " + int1 + " " + int2;
-            String rightAnswer = Integer.toString(countGCD(int1, int2));
-            result = Engine.askQuestion(questionStr, rightAnswer, userName);
-            if (!result) {
-                wasSuccess = false;
-                break;
-            }
-
+            questions[i] = "Question: " + int1 + " " + int2;
+            rightAnswers[i] = Integer.toString(countGCD(int1, int2));
         }
-        Engine.finishGame(wasSuccess, userName);
+        Engine.startGame(questions, rightAnswers, userName);
     }
+
+
 }

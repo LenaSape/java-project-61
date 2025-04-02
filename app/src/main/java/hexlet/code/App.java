@@ -25,22 +25,22 @@ public class App {
             case 0:
                 return;
             case 1:
-                sayHelloUser();
+                Cli.sayHello();
                 break;
             case 2:
-                Even.beginEven();
+                Even.playEven(3);
                 break;
             case 3:
-                Calc.beginCalc();
+                Calc.playCalc(3);
                 break;
             case 4:
-                GCD.beginGCD();
+                GCD.playGCD(3);
                 break;
             case 5:
-                Progression.beginProgression();
+                Progression.playProgression(3);
                 break;
             case 6:
-                Prime.beginPrime();
+                Prime.playPrime(3);
                 break;
             default:
                 //return;
@@ -48,11 +48,4 @@ public class App {
 
     }
 
-    public static void sayHelloUser() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner myObj = new Scanner(System.in);
-        String userName = myObj.nextLine();
-        System.out.println("Hello, " + userName + "!");
-    }
 }
