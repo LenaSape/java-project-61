@@ -22,8 +22,6 @@ public class App {
         String userChoice = userScanner.nextLine();
         int choice = Integer.parseInt(userChoice);
         switch (choice) {
-            case 0:
-                return;
             case 1:
                 Cli.sayHello();
                 break;
@@ -43,7 +41,7 @@ public class App {
                 Prime.playPrime(3);
                 break;
             default:
-                //return;
+                break;
         }
 
     }
