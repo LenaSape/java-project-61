@@ -9,11 +9,13 @@ public class Calc {
         String userName = Engine.sayGameRules("What is the result of the expression?");
         String[] questions = new String[rounds];
         String[] rightAnswers = new String[rounds];
+        var boundGame = 100;
+        var numberOfOps = 3;
         Random rand = new Random();
         for (int i = 0; i < rounds; i++) {
-            int int1 = rand.nextInt(100);
-            int int2 = rand.nextInt(100);
-            int intSign = rand.nextInt(3);
+            int int1 = rand.nextInt(boundGame);
+            int int2 = rand.nextInt(boundGame);
+            int intSign = rand.nextInt(numberOfOps);
             int intResult;
             char charSign;
             switch (intSign) {

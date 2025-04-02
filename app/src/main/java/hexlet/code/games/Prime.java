@@ -23,8 +23,9 @@ public class Prime {
         String[] questions = new String[rounds];
         String[] rightAnswers = new String[rounds];
         Random rand = new Random();
+        var boundGame = 50;
         for (int i = 0; i < rounds; i++) {
-            int number = rand.nextInt(50);
+            int number = rand.nextInt(boundGame);
             questions[i] = "Question: " + number;
             rightAnswers[i] = definePrime(number);
         }

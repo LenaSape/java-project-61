@@ -21,24 +21,25 @@ public class App {
         Scanner userScanner = new Scanner(System.in);
         String userChoice = userScanner.nextLine();
         int choice = Integer.parseInt(userChoice);
+        var rounds = 3;
         switch (choice) {
             case 1:
                 Cli.sayHello();
                 break;
             case 2:
-                Even.playEven(3);
+                Even.playEven(rounds);
                 break;
             case 3:
-                Calc.playCalc(3);
+                Calc.playCalc(rounds);
                 break;
             case 4:
-                GCD.playGCD(3);
+                GCD.playGCD(rounds);
                 break;
             case 5:
-                Progression.playProgression(3);
+                Progression.playProgression(rounds);
                 break;
             case 6:
-                Prime.playPrime(3);
+                Prime.playPrime(rounds);
                 break;
             default:
                 break;
