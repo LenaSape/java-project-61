@@ -1,14 +1,13 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calc {
 
-    public static void playCalc(int rounds) {
-        String userName = Engine.sayGameRules("What is the result of the expression?");
-        String[] questions = new String[rounds];
-        String[] rightAnswers = new String[rounds];
+    public static final String gameRule = "What is the result of the expression?";
+
+    public static String[][] prepareGame(int rounds) {
+        String[][] questions = new String[rounds][2];
         final int boundGame = 100;
         final int numberOfOps = 3;
         Random rand = new Random();
@@ -31,9 +30,9 @@ public class Calc {
                     intResult = int1 + int2;
                     charSign = '+';
             }
-            questions[i] = int1 + " " + charSign + " " + int2;
-            rightAnswers[i] = Integer.toString(intResult);
+            questions[i][0] = int1 + " " + charSign + " " + int2;
+            questions[i][1] = Integer.toString(intResult);
         }
-        Engine.startGame(questions, rightAnswers, userName);
+        return questions;
     }
 }

@@ -1,17 +1,16 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-
 import java.util.Random;
 
 public class Progression {
-    public static void playProgression(int rounds) {
-        String userName = Engine.sayGameRules("What number is missing in the progression?");
-        String[] questions = new String[rounds];
-        String[] rightAnswers = new String[rounds];
+
+    public static final String gameRule = "What number is missing in the progression?";
+    final static int membersCount = 10;
+    final static int boundDelta = 5;
+
+    public static String[][] prepareGame(int rounds) {
+        String[][] questions = new String[rounds][2];
         Random rand = new Random();
-        final int boundDelta = 5;
-        final int membersCount = 10;
         var boundNumberOfEl = membersCount - 1;
         for (int i = 0; i < rounds; i++) {
             int number0 = rand.nextInt(boundNumberOfEl) + 1;
@@ -29,12 +28,11 @@ public class Progression {
                 } else {
                     elements.append(number0 + delta * j);
                 }
-                //elements.append(Integer.toString(number0 + delta * j));
             }
-            questions[i] = elements.toString();
-            rightAnswers[i] = rightAnswer;
+            questions[i][0] = elements.toString();
+            questions[i][1] = rightAnswer;
         }
-        Engine.startGame(questions, rightAnswers, userName);
+        return questions;
     }
 }
 
