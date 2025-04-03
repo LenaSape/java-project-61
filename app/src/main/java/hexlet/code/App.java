@@ -20,25 +20,25 @@ public class App {
         System.out.print("Your choice: ");
         Scanner userScanner = new Scanner(System.in);
         String userChoice = userScanner.nextLine();
-        int choice = Integer.parseInt(userChoice);
+        //int choice = Integer.parseInt(userChoice);
         final int rounds = 3;
-        switch (choice) {
-            case 1:
+        switch (userChoice) {
+            case "1":
                 Cli.sayHello();
                 break;
-            case 2:
+            case "2":
                 Even.playEven(rounds);
                 break;
-            case 3:
+            case "3":
                 Calc.playCalc(rounds);
                 break;
-            case 4:
+            case "4":
                 GCD.playGCD(rounds);
                 break;
-            case 5:
+            case "5":
                 Progression.playProgression(rounds);
                 break;
-            case 6:
+            case "6":
                 Prime.playPrime(rounds);
                 break;
             default:

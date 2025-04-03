@@ -11,7 +11,8 @@ public class Progression {
         String[] rightAnswers = new String[rounds];
         Random rand = new Random();
         final int boundDelta = 5;
-        final int boundNumberOfEl = 8;
+        final int membersCount = 10;
+        var boundNumberOfEl = membersCount - 1;
         for (int i = 0; i < rounds; i++) {
             int number0 = rand.nextInt(boundNumberOfEl) + 1;
             int pos = rand.nextInt(boundNumberOfEl) + 1;
