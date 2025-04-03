@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class GCD {
 
-    public static final String gameRule = "Find the greatest common divisor of given numbers.";
+    public static final String GAMERULE = "Find the greatest common divisor of given numbers.";
 
     public static int countGCD(int a, int b) {
         while (b != 0) {

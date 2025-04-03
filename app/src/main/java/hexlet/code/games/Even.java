@@ -3,7 +3,8 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class Even {
-    public static final String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
+    public static final String GAMERULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static String[][] prepareGame(int rounds) {
         String[][] questions = new String[rounds][2];

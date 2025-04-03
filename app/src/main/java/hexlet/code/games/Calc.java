@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Calc {
 
-    public static final String gameRule = "What is the result of the expression?";
+    public static final String GAMERULE = "What is the result of the expression?";
 
     public static String[][] prepareGame(int rounds) {
         String[][] questions = new String[rounds][2];

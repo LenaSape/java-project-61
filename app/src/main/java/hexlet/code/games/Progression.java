@@ -4,23 +4,23 @@ import java.util.Random;
 
 public class Progression {
 
-    public static final String gameRule = "What number is missing in the progression?";
-    final static int membersCount = 10;
-    final static int boundDelta = 5;
+    public static final String GAMERULE = "What number is missing in the progression?";
+    private static final int MEMBERSCOUNT = 10;
+    private static final int BOUNDDELTA = 5;
 
     public static String[][] prepareGame(int rounds) {
         String[][] questions = new String[rounds][2];
         Random rand = new Random();
-        var boundNumberOfEl = membersCount - 1;
+        var boundNumberOfEl = MEMBERSCOUNT - 1;
         for (int i = 0; i < rounds; i++) {
             int number0 = rand.nextInt(boundNumberOfEl) + 1;
             int pos = rand.nextInt(boundNumberOfEl) + 1;
-            int delta = rand.nextInt(boundDelta) + 1;
+            int delta = rand.nextInt(BOUNDDELTA) + 1;
             String rightAnswer = "";
             StringBuilder elements = new StringBuilder();
             elements.append("Question: ");
             elements.append(number0);
-            for (int j = 1; j < membersCount; j++) {
+            for (int j = 1; j < MEMBERSCOUNT; j++) {
                 elements.append(" ");
                 if (j == pos) {
                     elements.append("..");

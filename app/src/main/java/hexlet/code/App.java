@@ -28,23 +28,23 @@ public class App {
                 break;
             case "2":
                 questions = Even.prepareGame(rounds);
-                Engine.playGame(questions, Even.gameRule);
+                Engine.playGame(questions, Even.GAMERULE);
                 break;
             case "3":
                 questions = Calc.prepareGame(rounds);
-                Engine.playGame(questions, Calc.gameRule);
+                Engine.playGame(questions, Calc.GAMERULE);
                 break;
             case "4":
                 questions = GCD.prepareGame(rounds);
-                Engine.playGame(questions, GCD.gameRule);
+                Engine.playGame(questions, GCD.GAMERULE);
                 break;
             case "5":
                 questions = Progression.prepareGame(rounds);
-                Engine.playGame(questions, Progression.gameRule);
+                Engine.playGame(questions, Progression.GAMERULE);
                 break;
             case "6":
                 questions = Prime.prepareGame(rounds);
-                Engine.playGame(questions, Prime.gameRule);
+                Engine.playGame(questions, Prime.GAMERULE);
                 break;
             default:
                 break;
