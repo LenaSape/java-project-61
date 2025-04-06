@@ -4,35 +4,35 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static void playGame(String[][] questions, String gameRuler) {
-        String userName = Cli.sayHello();
-        System.out.println(gameRuler);
-        boolean wasSuccess = true;
-        boolean result;
-        for (int i = 0; i < questions.length; i++) {
+    public static final int ROUNDS = 3;
+
+    public static String sayHello() {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner myObj = new Scanner(System.in);
+        String userName = myObj.nextLine();
+        System.out.println("Hello, " + userName + "!");
+        return userName;
+    }
+    public static void playGame(String[][] questions, String gameRule) {
+        String userName = sayHello();
+        System.out.println(gameRule);
+        Scanner scanNumbers = new Scanner(System.in);
+        for (int i = 0; i < ROUNDS; i++) {
             String questionStr = questions[i][0];
             String rightAnswer = questions[i][1];
             System.out.println("Question: " + questionStr);
             System.out.print("Your answer: ");
-            Scanner scanNumbers = new Scanner(System.in);
             String userAnswer = scanNumbers.nextLine();
             if (userAnswer.equals(rightAnswer)) {
                 System.out.println("Correct!");
-                result = true;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                         + rightAnswer + "'.");
-                result = false;
-            }
-            if (!result) {
-                wasSuccess = false;
-                break;
+                System.out.println("Let's try again, " + userName + "!");
+                return;
             }
         }
-        if (wasSuccess) {
-            System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("Let's try again, " + userName + "!");
-        }
+        System.out.println("Congratulations, " + userName + "!");
     }
 }

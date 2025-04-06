@@ -20,31 +20,24 @@ public class App {
         System.out.print("Your choice: ");
         Scanner userScanner = new Scanner(System.in);
         String userChoice = userScanner.nextLine();
-        final int rounds = 3;
-        String[][] questions;
         switch (userChoice) {
             case "1":
-                Cli.sayHello();
+                Engine.sayHello();
                 break;
             case "2":
-                questions = Even.prepareGame(rounds);
-                Engine.playGame(questions, Even.GAMERULE);
+                Even.play();
                 break;
             case "3":
-                questions = Calc.prepareGame(rounds);
-                Engine.playGame(questions, Calc.GAMERULE);
+                Calc.play();
                 break;
             case "4":
-                questions = GCD.prepareGame(rounds);
-                Engine.playGame(questions, GCD.GAMERULE);
+                GCD.play();
                 break;
             case "5":
-                questions = Progression.prepareGame(rounds);
-                Engine.playGame(questions, Progression.GAMERULE);
+                Progression.play();
                 break;
             case "6":
-                questions = Prime.prepareGame(rounds);
-                Engine.playGame(questions, Prime.GAMERULE);
+                Prime.play();
                 break;
             default:
                 break;

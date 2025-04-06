@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class GCD {
@@ -15,17 +17,17 @@ public class GCD {
         return a;
     }
 
-    public static String[][] prepareGame(int rounds) {
-        String[][] questions = new String[rounds][2];
+    public static void play() {
+        String[][] questions = new String[Engine.ROUNDS][2];
         final int boundGame = 100;
         Random rand = new Random();
-        for (int i = 0; i < rounds; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int int1 = rand.nextInt(boundGame);
             int int2 = rand.nextInt(boundGame);
             questions[i][0] = "Question: " + int1 + " " + int2;
             questions[i][1] = Integer.toString(countGCD(int1, int2));
         }
-        return questions;
+        Engine.playGame(questions, GAMERULE);
     }
 
 }

@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class Progression {
@@ -8,11 +10,15 @@ public class Progression {
     private static final int MEMBERSCOUNT = 10;
     private static final int BOUNDDELTA = 5;
 
-    public static String[][] prepareGame(int rounds) {
-        String[][] questions = new String[rounds][2];
+    public static int nextProgressElement(int startElement, int delta, int posElement) {
+        return startElement + delta * posElement;
+    }
+
+    public static void play() {
+        String[][] questions = new String[Engine.ROUNDS][2];
         Random rand = new Random();
         var boundNumberOfEl = MEMBERSCOUNT - 1;
-        for (int i = 0; i < rounds; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int number0 = rand.nextInt(boundNumberOfEl) + 1;
             int pos = rand.nextInt(boundNumberOfEl) + 1;
             int delta = rand.nextInt(BOUNDDELTA) + 1;
@@ -24,15 +30,15 @@ public class Progression {
                 elements.append(" ");
                 if (j == pos) {
                     elements.append("..");
-                    rightAnswer = Integer.toString(number0 + delta * j);
+                    rightAnswer = Integer.toString(nextProgressElement(number0, delta, j));
                 } else {
-                    elements.append(number0 + delta * j);
+                    elements.append(nextProgressElement(number0, delta, j));
                 }
             }
             questions[i][0] = elements.toString();
             questions[i][1] = rightAnswer;
         }
-        return questions;
+        Engine.playGame(questions, GAMERULE);
     }
 }
 
