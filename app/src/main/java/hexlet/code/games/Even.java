@@ -8,7 +8,7 @@ public class Even {
     public static final String GAMERULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static boolean isEven(int number) {
-        return (number % 2 == 0) ? true : false;
+        return (number % 2 == 0);
     }
 
     public static void play() {
