@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Prime {
 
-    public static final String GAMERULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static boolean isPrime(int a) {
         if (a <= 1) {
@@ -26,9 +26,9 @@ public class Prime {
         final int boundGame = 50;
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int number = rand.nextInt(boundGame);
-            questions[i][0] = "Question: " + number;
+            questions[i][0] = Integer.toString(number);
             questions[i][1] = isPrime(number) ? "yes" : "no";
         }
-        Engine.playGame(questions, GAMERULE);
+        Engine.playGame(questions, GAME_RULE);
     }
 }
